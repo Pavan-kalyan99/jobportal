@@ -26,27 +26,36 @@ const JobSearch = ({ filters, setFilters }) => {
           placeholder="Search By Job Title"
           leftSection={<IconSearch size={16} />}
           className="flex-1"
+          variant="unstyled" // <-- removes border, background, padding
+
           value={filters.query}
           onChange={(e) => setFilters((f) => ({ ...f, query: e.target.value }))}
         />
+        <div className="hidden lg:block w-px bg-gray-300 self-stretch mx-2" />
 
         <Select
           placeholder="Preferred location"
           data={['Remote', 'Bangalore', 'Hyderabad', 'Mumbai', 'Delhi']}
           leftSection={<IconMapPin size={16} />}
           className="flex-1"
+          variant="unstyled" // <-- removes border, background, padding
+
           value={filters.location}
           onChange={(value) => setFilters((f) => ({ ...f, location: value }))}
         />
+        <div className="hidden lg:block w-px bg-gray-300 self-stretch mx-2" />
 
         <Select
           placeholder="Job type"
           data={['FullTime', 'PartTime', 'Internship', 'Freelance']}
           leftSection={<IconBriefcase size={16} />}
           className="flex-1"
+          variant="unstyled" // <-- removes border, background, padding
+
           value={filters.type}
           onChange={(value) => setFilters((f) => ({ ...f, type: value }))}
         />
+        <div className="hidden lg:block w-px bg-gray-300 self-stretch mx-2" />
 
         <div className="flex-1">
           <div className="flex justify-between items-center mb-1">

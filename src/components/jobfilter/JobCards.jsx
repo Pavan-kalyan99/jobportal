@@ -10,6 +10,9 @@ import {
     Grid,
 } from '@mantine/core';
 import { List } from '@mantine/core';
+// import { IconBriefcase } from '@tabler/icons-react';
+import { IconUser } from '@tabler/icons-react';
+import { IconBuildings } from '@tabler/icons-react';
 
 import {
     IconBriefcase,
@@ -36,7 +39,7 @@ function timeAgo(dateString) {
 
     const diffInHours = Math.floor(diffInMinutes / 60);
     if (diffInHours < 24) {
-        return diffInHours === 1 ? "1 hr" : `${diffInHours} hr`;
+        return diffInHours === 1 ? "1 hr" : `${diffInHours} hrs`;
     }
 
     const diffInDays = Math.floor(diffInHours / 24);
@@ -69,19 +72,21 @@ const JobCards = ({ job }) => {
                         {/* <Image src="/images/job_logo.png"
                             alt="Main Logo" width={32} height={32} /> */}
                         {/* <Text size="lg" fw={600}>Logo</Text> */}
-                        <Badge className='text-blue-400'>{timeAgo(job.created_at)} Ago</Badge>
+                        <h1 className='text-black h-8 bg-blue-300 m-1 p-1 rounded'>{timeAgo(job.created_at)} Ago</h1>
                     </Group>
 
                     <Text size="lg" mt="xs">{job.title}</Text>
 
                     <Group gap="sm" justify="space-between" wrap="wrap" className='w-full' mt="xs">
                         <Group gap={4}>
-                            <IconMapPin size={16} />
+                            <IconUser size={16} />
+                            {/* <IconMapPin size={16} /> */}
                             <Text size="sm">{job.exp || '1-3'} Exp</Text>
                         </Group>
 
                         <Group gap={4}>
-                            <IconCurrencyDollar size={16} />
+                            <IconBuildings stroke={1} size={16} />
+                            {/* <IconCurrencyDollar size={16} /> */}
                             <Text size="sm">{job.type}</Text>
                         </Group>
 
@@ -96,10 +101,13 @@ const JobCards = ({ job }) => {
                     {/* <Text size="sm" lineClamp={3} mt="xs">
 
 </Text> */}
-                    <List className='m-2' listStyleType="disc">
-                        <List.Item>{job.description}</List.Item>
+                    <div className='m-1'>
 
-                    </List>
+                        <List className='' listStyleType="disc">
+                            <List.Item>{job.description}</List.Item>
+
+                        </List>
+                    </div>
                 </div>
 
                 <Button variant="dark" color="blue" fullWidth mt="md">

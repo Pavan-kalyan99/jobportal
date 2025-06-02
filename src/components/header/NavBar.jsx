@@ -36,7 +36,16 @@ const NavBar = ({ onCreateJobClick }) => {
   const [opened, { toggle, close }] = useDisclosure(false);
 
   return (
-    <Box bg="white" py="xs" style={{ borderBottom: '1px solid #eee' }}>
+    <Box bg="" py="xs"
+      // className='bg-gray-100'
+      className="shadow-sm"
+      style={{ borderRadius: '29px' }} // or '8px', '16px', etc.
+
+    // style={{
+    //   boxShadow: '0 4px 20px rgba(255, 255, 255, 0.5)', // white shadow
+    //   borderRadius: '8px', // optional: soften edges
+    // }}  
+    >
       <Container size="lg" px="md">
         <Group justify="space-between" align="center" wrap="nowrap">
           {/* Logo */}
@@ -52,7 +61,7 @@ const NavBar = ({ onCreateJobClick }) => {
               <Text
                 key={link.label}
                 // variant="default"
-                className='text-gray-900'
+                className='text-gray-900 font-bold'
               //component={Link}
               // href={link.href}
               >
