@@ -136,11 +136,13 @@ const JobList = () => {
                         No results found.
                     </Text>
                 ) : (
-                    jobs.map((job) => (
-                        <div key={job.id} className="m-2" span={{ base: 12, sm: 6, md: 4 }}>
-                            <JobCards job={job} />
-                        </div>
-                    ))
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2">{
+
+                        jobs.map((job) => (
+                            <JobCards key={job.id} job={job} />
+                        ))
+                    }
+                    </div>
                 )}
             </Grid>
         </>

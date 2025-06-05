@@ -59,7 +59,7 @@ function timeAgo(dateString) {
 const JobCards = ({ job }) => {
 
     return (
-        <Card shadow="sm" padding="lg" radius="md" withBorder h="100%" className='w-100 gap-4'>
+        <Card shadow="sm" padding="lg" radius="md" withBorder className="h-full w-full">
             <Stack justify="space-between" h="100%">
                 <div>
                     <Group justify="space-between">
@@ -72,12 +72,12 @@ const JobCards = ({ job }) => {
                         {/* <Image src="/images/job_logo.png"
                             alt="Main Logo" width={32} height={32} /> */}
                         {/* <Text size="lg" fw={600}>Logo</Text> */}
-                        <h1 className='text-black h-8 bg-blue-300 m-1 p-1 rounded'>{timeAgo(job.created_at)} Ago</h1>
+                        <h1 className='text-black h-8 bg-blue-300 m-1 p-1 rounded ' fw="500">{timeAgo(job.created_at)} Ago</h1>
                     </Group>
 
-                    <Text size="lg" mt="xs">{job.title}</Text>
+                    <Text size="lg" mt="xs" fw={700}>{job.title}</Text>
 
-                    <Group gap="sm" justify="space-between" wrap="wrap" className='w-full' mt="xs">
+                    <Group gap="sm" justify="space-between" wrap="wrap" className='w-full' mt="xs" fw='500' >
                         <Group gap={4}>
                             <IconUser size={16} />
                             {/* <IconMapPin size={16} /> */}
@@ -101,9 +101,9 @@ const JobCards = ({ job }) => {
                     {/* <Text size="sm" lineClamp={3} mt="xs">
 
 </Text> */}
-                    <div className='m-1'>
+                    <div className='m-1 text-slate-600 text-sm'>
 
-                        <List className='' listStyleType="disc">
+                        <List listStyleType="disc">
                             <List.Item>{job.description}</List.Item>
 
                         </List>

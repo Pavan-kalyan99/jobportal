@@ -39,7 +39,7 @@ const NavBar = ({ onCreateJobClick }) => {
     <Box bg="" py="xs"
       // className='bg-gray-100'
       className="shadow-sm"
-      style={{ borderRadius: '29px' }} // or '8px', '16px', etc.
+      style={{ borderRadius: '29px', fontFamily: "sans-serif" }} // or '8px', '16px', etc.
 
     // style={{
     //   boxShadow: '0 4px 20px rgba(255, 255, 255, 0.5)', // white shadow
@@ -69,15 +69,13 @@ const NavBar = ({ onCreateJobClick }) => {
               </Text>
             ))}
             <Button
-              // component={Link}
-              // href="/create"
-              variant="filled"
-              color="violet"
               radius="xl"
               onClick={onCreateJobClick}
+              className="!bg-gradient-to-b !from-[#A128FF] !to-[#6100AD] !text-white hover:!opacity-90 transition"
             >
               Create Jobs
             </Button>
+
           </Group>
 
           {/* Mobile Menu Burger */}
@@ -118,17 +116,25 @@ const NavBar = ({ onCreateJobClick }) => {
             </Text>
           ))}
 
-          <Button
+          {/* <Button
             width='100%'
             // fullWidth
             variant="filled"
-            color="violet"
+           // color="violet"
             // leftSection={<IconPlus size={18} />}
             // component={Link}
             onClick={onCreateJobClick}
           >
             Create Jobs
+          </Button> */}
+          <Button
+            radius="xl"
+            onClick={onCreateJobClick}
+            className="!bg-gradient-to-b !from-[#A128FF] !to-[#6100AD] !text-white hover:!opacity-90 transition"
+          >
+            Create Jobs
           </Button>
+
         </Box>
       </Drawer>
     </Box>
